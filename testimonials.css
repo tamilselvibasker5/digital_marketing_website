@@ -1,0 +1,293 @@
+/* =====================================================
+   SCS Digital Marketing – testimonials.css
+   Centered Carousel style matching screenshot exactly
+   ===================================================== */
+
+.t-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: calc(var(--nav-h) + 40px) 0 40px;
+    background: #ffffff;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+/* Small tag at top */
+.t-tag {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #111;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+    font-family: var(--font-main);
+}
+
+/* Main heading */
+.t-heading {
+    font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+    font-weight: 700;
+    color: #111;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+    font-family: var(--font-main);
+}
+
+.t-heading em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* Carousel wrapper */
+.t-carousel-wrapper {
+    position: relative;
+    max-width: 1200px;
+    height: 330px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.t-carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Testimonial card */
+.t-card {
+    position: absolute;
+    width: 460px;
+    height: 280px;
+    border-radius: 24px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    box-sizing: border-box;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                background-color 0.6s ease,
+                box-shadow 0.6s ease;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Quote paragraph */
+.t-quote {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Author block */
+.t-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Avatar container */
+.t-avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    overflow: hidden;
+    background: #ffffff;
+    flex-shrink: 0;
+}
+
+.t-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Author info */
+.t-author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.t-author-info strong {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.t-author-info span {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- STATE DYNAMICS --- */
+
+/* Active state (coral red card in center) */
+.t-card.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1.05) translateX(0);
+    z-index: 10;
+    background-color: #ff525a; /* Bright brand coral red */
+    color: #ffffff;
+    box-shadow: 0 20px 40px -10px rgba(255, 82, 90, 0.3);
+}
+
+.t-card.active .t-author-info strong {
+    color: #ffffff;
+}
+
+.t-card.active .t-author-info span {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Prev state (faded pink card on left) */
+.t-card.prev {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(0.85) translateX(-65%);
+    z-index: 5;
+    background-color: #ffd2d5; /* Soft brand pink background */
+    box-shadow: 0 10px 25px rgba(255, 82, 90, 0.08);
+}
+
+/* Next state (faded pink card on right) */
+.t-card.next {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(0.85) translateX(65%);
+    z-index: 5;
+    background-color: #ffd2d5; /* Soft brand pink background */
+    box-shadow: 0 10px 25px rgba(255, 82, 90, 0.08);
+}
+
+/* Hide content slightly on left and right for visual focus */
+.t-card.prev .t-author-info strong,
+.t-card.next .t-author-info strong {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.t-card.prev .t-author-info span,
+.t-card.next .t-author-info span {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* --- CAROUSEL ARROWS --- */
+.t-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: #ff2b38; /* Red background */
+    border: none;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    z-index: 20;
+    box-shadow: 0 4px 15px rgba(255, 43, 56, 0.3);
+}
+
+.t-arrow:hover {
+    background-color: #cc0000;
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 43, 56, 0.45);
+}
+
+.t-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+/* Position arrows overlapping active card edges */
+#prevBtn {
+    left: calc(50% - 290px); /* Based on card center offset */
+}
+
+#nextBtn {
+    right: calc(50% - 290px);
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 1024px) {
+    .t-card.prev {
+        transform: scale(0.85) translateX(-50%);
+    }
+    
+    .t-card.next {
+        transform: scale(0.85) translateX(50%);
+    }
+    
+    #prevBtn {
+        left: calc(50% - 260px);
+    }
+    
+    #nextBtn {
+        right: calc(50% - 260px);
+    }
+}
+
+@media (max-width: 768px) {
+    .t-carousel-wrapper {
+        height: 380px;
+    }
+    
+    /* Hide side cards on mobile, keep only active card */
+    .t-card.prev,
+    .t-card.next {
+        display: none;
+        opacity: 0;
+    }
+    
+    .t-card.active {
+        transform: scale(1) translateX(0);
+        width: 85%;
+        height: 340px;
+        padding: 30px;
+    }
+    
+    #prevBtn {
+        left: 20px;
+    }
+    
+    #nextBtn {
+        right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .t-heading {
+        margin-bottom: 40px;
+    }
+    
+    .t-card.active {
+        width: 90%;
+        padding: 24px;
+        height: auto;
+        min-height: 320px;
+    }
+    
+    .t-quote {
+        font-size: 0.95rem;
+    }
+}
