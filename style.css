@@ -232,6 +232,23 @@ ul {
   background: rgba(255, 43, 56, 0.06);
 }
 
+.nav-link.nav-link-crm {
+  background: rgba(255, 43, 56, 0.08);
+  color: var(--red) !important;
+  font-weight: 700;
+  border: 1.5px solid rgba(255, 43, 56, 0.2);
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  margin-left: 5px;
+}
+
+.nav-link.nav-link-crm:hover {
+  background: var(--red) !important;
+  color: var(--white) !important;
+  box-shadow: 0 4px 12px var(--red-glow);
+}
+
+
 .nav-btn {
   padding: 12px 26px;
   background: #1d1d1d;
@@ -246,6 +263,38 @@ ul {
 .nav-btn:hover {
   background: var(--red);
 }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-btn-highlight-crm {
+  display: inline-block;
+  padding: 10px 20px;
+  background: transparent;
+  color: var(--red) !important;
+  border: 1.5px solid var(--red) !important;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: .3s;
+  letter-spacing: 0.02em;
+}
+
+.nav-btn-highlight-crm:hover {
+  background: var(--red) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px var(--red-glow) !important;
+  transform: translateY(-1px);
+}
+
+.mobile-only {
+  display: none !important;
+}
+
 
 .hamburger {
   display: none;
@@ -1232,8 +1281,13 @@ ul {
 }
 
 @keyframes faq-star-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .faq-answer-box {
@@ -1280,6 +1334,7 @@ ul {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+
   .faq-answer-box {
     min-height: auto;
     padding: 30px;
@@ -1465,6 +1520,7 @@ ul {
     opacity: 0;
     transform: translateY(36px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1479,7 +1535,7 @@ ul {
 .slide-down {
   opacity: 0;
   transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: opacity, transform;
 }
 
@@ -1487,6 +1543,7 @@ ul {
 .fade-up {
   transform: translateY(40px);
 }
+
 .fade-up.visible {
   opacity: 1;
   transform: translateY(0);
@@ -1496,6 +1553,7 @@ ul {
 .fade-left {
   transform: translateX(-48px);
 }
+
 .fade-left.visible {
   opacity: 1;
   transform: translateX(0);
@@ -1505,6 +1563,7 @@ ul {
 .fade-right {
   transform: translateX(48px);
 }
+
 .fade-right.visible {
   opacity: 1;
   transform: translateX(0);
@@ -1514,6 +1573,7 @@ ul {
 .scale-in {
   transform: scale(0.92);
 }
+
 .scale-in.visible {
   opacity: 1;
   transform: scale(1);
@@ -1523,22 +1583,45 @@ ul {
 .slide-down {
   transform: translateY(-24px);
 }
+
 .slide-down.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* Stagger delay helpers */
-.anim-delay-1 { transition-delay: 0.08s; }
-.anim-delay-2 { transition-delay: 0.16s; }
-.anim-delay-3 { transition-delay: 0.24s; }
-.anim-delay-4 { transition-delay: 0.32s; }
-.anim-delay-5 { transition-delay: 0.40s; }
-.anim-delay-6 { transition-delay: 0.48s; }
+.anim-delay-1 {
+  transition-delay: 0.08s;
+}
+
+.anim-delay-2 {
+  transition-delay: 0.16s;
+}
+
+.anim-delay-3 {
+  transition-delay: 0.24s;
+}
+
+.anim-delay-4 {
+  transition-delay: 0.32s;
+}
+
+.anim-delay-5 {
+  transition-delay: 0.40s;
+}
+
+.anim-delay-6 {
+  transition-delay: 0.48s;
+}
 
 /* Respect user preference */
 @media (prefers-reduced-motion: reduce) {
-  .fade-up, .fade-left, .fade-right, .scale-in, .slide-down {
+
+  .fade-up,
+  .fade-left,
+  .fade-right,
+  .scale-in,
+  .slide-down {
     opacity: 1;
     transform: none;
     transition: none;
@@ -1596,8 +1679,13 @@ ul {
 @media (max-width: 768px) {
 
   .nav-links,
-  .btn-nav {
-    display: none;
+  .btn-nav,
+  .nav-actions {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: block !important;
   }
 
   .hamburger {

@@ -11,19 +11,22 @@ window.addEventListener('scroll', () => {
   // Scrolled shadow
   navbar.classList.toggle('scrolled', window.scrollY > 20);
 
-  // Active link highlight
-  let current = '';
-  sections.forEach(sec => {
-    const top = sec.offsetTop - 100;
-    if (window.scrollY >= top) current = sec.getAttribute('id');
-  });
+  // Active link highlight (only on home/index page)
+  const isSubpage = window.location.pathname.includes('contact.html') || window.location.pathname.includes('crm.html');
+  if (!isSubpage && sections.length > 0) {
+    let current = '';
+    sections.forEach(sec => {
+      const top = sec.offsetTop - 100;
+      if (window.scrollY >= top) current = sec.getAttribute('id');
+    });
 
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === `#${current}`) {
-      link.classList.add('active');
-    }
-  });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  }
 });
 
 // ── 2. HAMBURGER MENU ──────────────────────────────
@@ -180,7 +183,7 @@ document.querySelectorAll('.what-card').forEach(card => {
   card.addEventListener('mousemove', (e) => {
     const rect = card.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width - 0.5) * 8;
-    const y = ((e.clientY - rect.top)  / rect.height - 0.5) * 8;
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 8;
     card.style.transform = `translateY(-5px) rotateX(${-y}deg) rotateY(${x}deg)`;
   });
 
@@ -193,15 +196,27 @@ document.querySelectorAll('.what-card').forEach(card => {
 const faqItems = document.querySelectorAll('.faq-item');
 const faqAnswerText = document.getElementById('faq-answer-text');
 
-const faqAnswers = [
-  "Digital marketing is the promotion of products or services using digital channels, such as search engines, social media, email, and websites. Its primary goal is to connect brands with target audiences exactly where they spend their time, building awareness, driving traffic, and boosting conversions.",
-  "SEO (Search Engine Optimization) optimizes your website to rank higher in search engine results. This increases your business's online visibility, drives more organic (free) traffic to your website, and helps attract high-quality leads who are actively searching for your services.",
-  "Google Ads captures active search intent (users searching for specific keywords), making it great for direct sales and leads. Meta Ads (Facebook/Instagram) targets users based on demographics, interests, and behavior, which is perfect for building brand awareness and visual storytelling.",
-  "While paid advertising campaigns (like Google or Meta Ads) can drive traffic and leads almost instantly, organic strategies like SEO and content marketing typically take 3 to 6 months to show significant, sustainable results as search engines index and trust your site.",
-  "Social media marketing allows you to humanize your brand, build a community, and engage directly with your target audience. It is an essential channel for customer support, brand loyalty, and driving referral traffic to your website.",
-  "We use advanced analytics tools (like Google Analytics 4, heatmaps, and platform pixel tracking) to monitor key performance indicators (KPIs) such as click-through rates, conversion rates, cost per acquisition, and overall return on investment (ROI).",
-  "We recommend starting with a modest budget that allows you to test different audiences and creative assets. Once we identify high-converting campaigns, we scale the budget efficiently to maximize your return on ad spend (ROAS) and scale profitability."
-];
+let faqAnswers = [];
+if (window.location.pathname.includes('crm.html')) {
+  faqAnswers = [
+    "A Laundry CRM is custom-built for dry cleaning and laundry operations. Unlike generic sales CRMs, it integrates order intake ticketing, dynamic status tags (e.g. Wash, Dry, Fold, Ready), automated WhatsApp notification alerts, and customer wash/delivery preferences directly into a unified dashboard.",
+    "Yes, absolutely. The system connects to SMS and WhatsApp gateways to automatically notify your clients when their clothes are sorted, washed, or ready for store pickup or delivery route driver assignment.",
+    "The ROI calculator estimates savings by calculating labor time saved during ticket intake and counter check-ins (e.g., 10 mins saved per order at $20/hr) added to an estimated 20% return-rate revenue boost generated through automated retention campaigns and dry cleaning reminder schedules.",
+    "Yes. The laundry CRM supports barcode scanning for automated garment tag reading and tracking, and connects with standard retail point-of-sale receipt printers, barcode label makers, and cash drawers.",
+    "Yes. You can monitor and sync orders, revenue reports, customer preference profiles, and inventory statuses across multiple store locations or drop-off hubs from a centralized supervisor dashboard.",
+    "Yes. The system has a built-in Route Manager that lets drivers view scheduled pickup and delivery requests, optimize routes on maps, and update order statuses in real time from mobile browsers."
+  ];
+} else {
+  faqAnswers = [
+    "Digital marketing is the promotion of products or services using digital channels, such as search engines, social media, email, and websites. Its primary goal is to connect brands with target audiences exactly where they spend their time, building awareness, driving traffic, and boosting conversions.",
+    "SEO (Search Engine Optimization) optimizes your website to rank higher in search engine results. This increases your business's online visibility, drives more organic (free) traffic to your website, and helps attract high-quality leads who are actively searching for your services.",
+    "Google Ads captures active search intent (users searching for specific keywords), making it great for direct sales and leads. Meta Ads (Facebook/Instagram) targets users based on demographics, interests, and behavior, which is perfect for building brand awareness and visual storytelling.",
+    "While paid advertising campaigns (like Google or Meta Ads) can drive traffic and leads almost instantly, organic strategies like SEO and content marketing typically take 3 to 6 months to show significant, sustainable results as search engines index and trust your site.",
+    "Social media marketing allows you to humanize your brand, build a community, and engage directly with your target audience. It is an essential channel for customer support, brand loyalty, and driving referral traffic to your website.",
+    "We use advanced analytics tools (like Google Analytics 4, heatmaps, and platform pixel tracking) to monitor key performance indicators (KPIs) such as click-through rates, conversion rates, cost per acquisition, and overall return on investment (ROI).",
+    "We recommend starting with a modest budget that allows you to test different audiences and creative assets. Once we identify high-converting campaigns, we scale the budget efficiently to maximize your return on ad spend (ROAS) and scale profitability."
+  ];
+}
 
 faqItems.forEach(item => {
   item.addEventListener('click', () => {

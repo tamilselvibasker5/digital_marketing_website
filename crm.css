@@ -1,0 +1,793 @@
+/* =====================================================
+   SCS Digital Marketing – crm.css
+   Custom CSS for Laundry CRM & Automation Page
+   ===================================================== */
+
+:root {
+  --crm-primary: #ff2b38;
+  --crm-primary-hover: #cc0000;
+  --crm-primary-light: #fff0f1;
+  --crm-primary-glow: rgba(255, 43, 56, 0.15);
+  --crm-border-light: #ffd6d8;
+  --crm-border-hover: #ffa8ad;
+  --crm-bg-light-blue: #fff5f6;
+}
+
+/* ── Global/Navbar/Footer overrides for CRM page ── */
+.nav-link:hover,
+.nav-link.active {
+  color: var(--crm-primary) !important;
+  background: var(--crm-primary-light) !important;
+}
+
+.nav-link.nav-link-crm {
+  background: var(--crm-primary-light) !important;
+  color: var(--crm-primary) !important;
+  border: 1.5px solid rgba(17, 68, 135, 0.2) !important;
+}
+
+.nav-link.nav-link-crm:hover {
+  background: var(--crm-primary) !important;
+  color: var(--white) !important;
+  box-shadow: 0 4px 12px var(--crm-primary-glow) !important;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-btn-highlight {
+  display: inline-block;
+  padding: 10px 20px;
+  background: transparent;
+  color: var(--red) !important;
+  border: 1.5px solid var(--red) !important;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: .3s;
+  letter-spacing: 0.02em;
+}
+
+.nav-btn-highlight:hover {
+  background: var(--red) !important;
+  color: var(--white) !important;
+  box-shadow: 0 4px 12px var(--red-glow) !important;
+  transform: translateY(-1px);
+}
+
+.mobile-only {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .nav-actions {
+    display: none !important;
+  }
+  .mobile-only {
+    display: block !important;
+  }
+}
+
+
+
+.nav-btn:hover {
+  background: var(--crm-primary) !important;
+  box-shadow: 0 4px 16px var(--crm-primary-glow) !important;
+}
+
+.contact-details-list-footer li .icon {
+  color: var(--crm-primary) !important;
+}
+
+.cta-card-box {
+  background: linear-gradient(135deg, #cc0000 0%, #ff2b38 100%) !important;
+  box-shadow: 0 20px 50px rgba(255, 43, 56, 0.25) !important;
+}
+
+.faq-icon-wrapper {
+  color: var(--crm-primary) !important;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, var(--crm-primary) 0%, #ff757f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* FAQ active state and answer box overrides */
+.faq-item.active {
+  background: var(--crm-primary-light) !important;
+  color: var(--crm-primary) !important;
+  border-left: 4px solid var(--crm-primary) !important;
+  transform: translateX(6px) !important;
+  box-shadow: 0 8px 20px var(--crm-primary-glow) !important;
+}
+
+.faq-item.active span {
+  font-weight: 600 !important;
+}
+
+.faq-item.active .faq-icon-wrapper {
+  color: var(--crm-primary) !important;
+}
+
+.faq-answer-box {
+  background: var(--crm-primary) !important;
+  box-shadow: 0 16px 32px var(--crm-primary-glow) !important;
+}
+
+/* ── 1. HERO SECTION (CENTERED & GRID PATTERN) ────── */
+.crm-hero {
+  padding-top: calc(var(--nav-h) + 60px);
+  padding-bottom: 0px;
+  /* Mockup floats into next section nicely */
+  background-color: #ffffff;
+  /* Subtly repeating dot grid pattern combined with dual top-corner blue radial glows */
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(255, 43, 56, 0.04) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(255, 117, 127, 0.05) 0px, transparent 50%),
+    radial-gradient(rgba(255, 43, 56, 0.05) 1.5px, transparent 1.5px);
+  background-size: 100% 100%, 100% 100%, 24px 24px;
+  background-position: center;
+  overflow: hidden;
+}
+
+.crm-hero-centered {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.crm-title-centered {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--dark);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.crm-subtitle-centered {
+  font-size: 0.98rem;
+  color: var(--mid);
+  margin-bottom: 1.25rem;
+  line-height: 1.65;
+  max-width: 680px;
+}
+
+.crm-btns-centered {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Screenshot buttons styling */
+.btn-crm-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: transparent;
+  color: var(--crm-primary);
+  border: 1.5px solid var(--crm-primary);
+  transition: all var(--transition);
+  letter-spacing: 0.02em;
+}
+
+.btn-crm-outline:hover {
+  background: var(--crm-primary-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--crm-primary-glow);
+}
+
+.btn-crm-solid {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 2.2rem;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: var(--crm-primary);
+  color: #ffffff;
+  border: 1.5px solid var(--crm-primary);
+  transition: all var(--transition);
+  letter-spacing: 0.02em;
+}
+
+.btn-crm-solid:hover {
+  background: var(--crm-primary-hover);
+  border-color: var(--crm-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px var(--crm-primary-glow);
+}
+
+/* Large mockup shadow window with browser controls */
+.crm-mockup-window {
+  width: 100%;
+  max-width: 960px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 30px 60px rgba(17, 68, 135, 0.06), 0 0 40px rgba(17, 68, 135, 0.03), 0 0 0 1px rgba(17, 68, 135, 0.02);
+  border: 1px solid rgba(17, 68, 135, 0.08);
+  overflow: hidden;
+  padding: 0;
+}
+
+.mockup-browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  background: #f5f6f8;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.browser-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.browser-dot.red {
+  background: #ff5f56;
+}
+
+.browser-dot.yellow {
+  background: #ffbd2e;
+}
+
+.browser-dot.green {
+  background: #27c93f;
+}
+
+.browser-address {
+  margin-left: 20px;
+  flex: 1;
+  background: #ffffff;
+  font-size: 0.72rem;
+  color: var(--light-grey);
+  padding: 4px 12px;
+  border-radius: 6px;
+  text-align: center;
+  max-width: 320px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  font-family: monospace;
+}
+
+.mockup-content {
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.mockup-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* ── 3. CAPABILITIES / FEATURES ───────────────────── */
+.crm-features {
+  padding: 60px 0;
+  background: #fafafa;
+}
+
+.section-header-features {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.features-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--crm-primary);
+  background: var(--crm-primary-light);
+  padding: 0.35rem 0.95rem;
+  border-radius: 6px;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+}
+
+.features-title {
+  font-size: clamp(2rem, 4.2vw, 3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--dark);
+}
+
+.features-title em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+/* 2x2 Feature Grid styling */
+.crm-features-grid-new {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.crm-feature-card-new {
+  background: var(--white);
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.01);
+  border: 1px solid var(--crm-border-light);
+  border-left: 4px solid transparent;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: visible; /* Allows floating icons to look natural */
+}
+
+.crm-feature-card-new:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(17, 68, 135, 0.08);
+  border-color: var(--crm-border-hover);
+  border-left-color: var(--crm-primary);
+}
+
+.crm-feature-icon-new {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--crm-primary-light) 0%, var(--white) 100%);
+  border: 1.5px solid var(--crm-border-light);
+  color: var(--crm-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 10px rgba(17, 68, 135, 0.04);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.crm-feature-card-new:hover .crm-feature-icon-new {
+  background: var(--crm-primary);
+  border-color: var(--crm-primary);
+  color: var(--white);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(17, 68, 135, 0.25);
+}
+
+.crm-feature-card-new h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: #0a2d5c;
+  transition: color var(--transition);
+}
+
+.crm-feature-card-new:hover h3 {
+  color: var(--crm-primary);
+}
+
+.crm-feature-card-new p {
+  color: var(--light-grey);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 992px) {
+  .crm-features-grid-new {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* ── 4. WHY CHOOSE OUR CRM ─────────────────────────── */
+.crm-why-choose {
+  padding: 60px 0;
+  background: linear-gradient(180deg, var(--white) 0%, var(--crm-bg-light-blue) 100%);
+}
+
+.why-choose-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.why-choose-header h2 {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--dark);
+}
+
+.why-choose-header h2 em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.crm-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.crm-why-card {
+  background: var(--white);
+  padding: 30px 20px;
+  border-radius: 16px;
+  border: 1.5px solid var(--crm-border-light);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.015);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all var(--transition);
+}
+
+.crm-why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px var(--crm-primary-glow);
+  border-color: var(--crm-border-hover);
+}
+
+.crm-why-num-circle {
+  width: 40px;
+  height: 40px;
+  background: var(--crm-primary-light);
+  color: var(--crm-primary);
+  font-size: 1.15rem;
+  font-weight: 800;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  transition: all var(--transition);
+}
+
+.crm-why-card:hover .crm-why-num-circle {
+  background: linear-gradient(135deg, var(--crm-primary) 0%, #60a5fa 100%);
+  color: var(--white);
+  box-shadow: 0 6px 16px var(--crm-primary-glow);
+  transform: scale(1.05);
+}
+
+.crm-why-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
+}
+
+.crm-why-card p {
+  font-size: 0.92rem;
+  color: var(--light-grey);
+  line-height: 1.6;
+}
+
+/* ── 5. ROI CALCULATOR ────────────────────────────── */
+.crm-calc-section {
+  padding: 120px 0;
+  background: var(--dark);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.crm-calc-section::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 43, 56, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.crm-calc-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.crm-calc-heading {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.crm-calc-heading h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.crm-calc-heading h2 span {
+  color: var(--red);
+}
+
+.crm-calc-heading p {
+  color: var(--light-grey);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.crm-calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  background: rgba(30, 30, 30, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 50px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.crm-calc-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.crm-calc-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.crm-calc-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.crm-calc-label-row label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--white);
+}
+
+.crm-calc-val {
+  font-weight: 700;
+  color: var(--red);
+  font-size: 1.1rem;
+  background: rgba(255, 43, 56, 0.1);
+  padding: 2px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 43, 56, 0.2);
+}
+
+.crm-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 5px;
+  background: #2a2a2a;
+  outline: none;
+  transition: background 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.crm-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--red);
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(255, 43, 56, 0.6);
+  transition: transform 0.15s, background-color 0.15s;
+}
+
+.crm-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+  background-color: #ff4d57;
+}
+
+.crm-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--red);
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(255, 43, 56, 0.6);
+  transition: transform 0.15s, background-color 0.15s;
+}
+
+.crm-slider::-moz-range-thumb:hover {
+  transform: scale(1.25);
+  background-color: #ff4d57;
+}
+
+/* Calculator Results Card */
+.crm-calc-results {
+  background: linear-gradient(135deg, rgba(255, 43, 56, 0.04) 0%, rgba(0, 0, 0, 0.25) 100%);
+  border: 1px solid rgba(255, 43, 56, 0.18);
+  border-radius: var(--radius-md);
+  padding: 45px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.crm-calc-glow {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(255, 43, 56, 0.25) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.crm-res-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--light-grey);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.crm-res-val {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, var(--white), var(--red));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.crm-res-subtext {
+  font-size: 0.9rem;
+  color: var(--light-grey);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.crm-res-cta {
+  width: 100%;
+}
+
+/* ── 6. MEDIA QUERIES ──────────────────────────────── */
+@media (max-width: 992px) {
+  .crm-hero {
+    padding-bottom: 0px;
+  }
+
+  .crm-why-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .crm-calc-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .crm-hero {
+    padding-top: calc(var(--nav-h) + 40px);
+  }
+
+  .crm-btns-centered {
+    margin-bottom: 3.5rem;
+  }
+
+  .crm-why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .crm-features {
+    padding: 60px 0;
+  }
+
+  .crm-why-choose {
+    padding: 60px 0;
+  }
+
+  .crm-calc-section {
+    padding: 60px 0;
+  }
+}
+
+/* Spotlight glow spotlight effects */
+.crm-feature-card-new,
+.crm-why-card {
+  position: relative;
+}
+
+.crm-feature-card-new::after,
+.crm-why-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(350px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(17, 68, 135, 0.08), transparent 80%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.crm-feature-card-new:hover::after,
+.crm-why-card:hover::after {
+  opacity: 1;
+}
+
+/* Ensure child content sits above spotlight layer */
+.crm-feature-card-new>*,
+.crm-why-card>* {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── 7. SCROLL REVEAL ANIMATIONS ────────────────────── */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.96) translateY(20px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-up.active,
+.reveal-left.active,
+.reveal-right.active,
+.reveal-scale.active {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 768px) {
+
+  .reveal-up,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    transition-delay: 0s !important;
+  }
+}

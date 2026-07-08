@@ -11,7 +11,7 @@
     justify-content: center;
     box-sizing: border-box;
     padding: calc(var(--nav-h) + 40px) 8% 40px;
-    background: #ffffff;
+    background: linear-gradient(180deg, #ffffff 0%, #fff6f7 50%, #ffffff 100%);
 }
 
 /*=====================================

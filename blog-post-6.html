@@ -4,16 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us – SCS Digital Marketing</title>
-    <meta name="description"
-        content="Get in touch with SCS Digital Marketing. Send us a message and let's grow your business together.">
+    <title>Perspective: What a Reasonable Marketing Budget Looks Like for a Small Service Business – Blogs</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="blogs.css?v=5">
 </head>
 
 <body>
@@ -27,13 +26,13 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html#home" class="nav-link">Home</a></li>
                 <li><a href="index.html#services" class="nav-link">Services</a></li>
-                <li><a href="index.html#faqs" class="nav-link">FAQs</a></li>
-                <li><a href="blogs.html" class="nav-link">Blogs</a></li>
-                <li class="mobile-only"><a href="crm.html" class="nav-link">CRM</a></li>
-                <li class="mobile-only"><a href="contact.html" class="nav-link active">Contact Us</a></li>
+                <li><a href="#" class="nav-link">Products</a></li>
+                <li><a href="blogs.html" class="nav-link active">Blogs</a></li>
+                <li class="mobile-only"><a href="index.html" class="nav-link">Digital Marketing</a></li>
+                <li class="mobile-only"><a href="contact.html" class="nav-link">Contact Us</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="crm.html" class="nav-btn-highlight-crm" id="nav-crm-btn">CRM</a>
+                <a href="index.html" class="nav-btn-highlight" id="nav-dm">Digital Marketing</a>
                 <a href="contact.html" class="nav-btn" id="nav-cta">Contact Us</a>
             </div>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -42,91 +41,67 @@
         </nav>
     </header>
 
-    <!-- ===== CONTACT & FOOTER GROUP ===== -->
-    <div class="contact-footer-container">
-        <!-- ===== CONTACT CONTENT ===== -->
-        <main class="contact-page-wrapper">
-            <div class="contact-page-container">
-
-                <!-- Left Column: Details -->
-                <div class="contact-info-col">
-                    <h1 class="contact-page-title">Let's Grow Your<br>Business <em>Together</em></h1>
-                    <p class="contact-page-subtitle">Have a project in mind or need expert digital marketing solutions?
-                        We'd love to hear from you.</p>
-
-                    <div class="contact-details-list">
-
-                        <div class="contact-detail-card">
-                            <div class="contact-detail-icon">
-                                <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
-                                    <path
-                                        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72A2 2 0 012 1h3a2 2 0 012 1.72c.127 1.01.359 2 .69 2.95a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.13-1.13a2 2 0 012.11-.45c.96.334 1.95.567 2.95.69A2 2 0 0122 16.92z"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                                </svg>
-                            </div>
-                            <div class="contact-detail-text">
-                                <strong>Phone</strong>
-                                <span>044-42832106, +91 9789020311</span>
-                            </div>
-                        </div>
-
-                        <div class="contact-detail-card">
-                            <div class="contact-detail-icon">
-                                <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
-                                    <path
-                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                                        stroke="currentColor" stroke-width="2" />
-                                    <path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" />
-                                </svg>
-                            </div>
-                            <div class="contact-detail-text">
-                                <strong>Email</strong>
-                                <span>support@systemcaresitsolutions.com</span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Right Column: Form Box -->
-                <div class="contact-form-col">
-                    <div class="contact-form-card">
-                        <h3>Send Us a Message</h3>
-
-                        <form id="contact-form" novalidate>
-                            <div class="form-group">
-                                <label for="name">Name:</label>
-                                <input type="text" id="name" name="name" placeholder="e.g. Vikram" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="phone">Mobile Number :</label>
-                                <input type="tel" id="phone" name="phone" placeholder="e.g. +91 90784 87387" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="message">Message :</label>
-                                <textarea id="message" name="message" rows="5" placeholder="e.g. Vikram"
-                                    required></textarea>
-                            </div>
-
-                            <button type="submit" class="contact-form-submit" id="submit-btn">
-                                <span class="btn-text">Submit</span>
-                                <span class="btn-loader" style="display:none;">Sending...</span>
-                            </button>
-
-                            <div class="form-success-box" id="form-success" style="display:none;">
-                                ✅ Thank you! Your message has been sent successfully. We will get back to you soon.
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
+    <!-- ===== BLOG CONTENT SECTION ===== -->
+    <section class="article-section">
+        <div class="article-container">
+            <a href="blogs.html" class="back-to-blogs">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to Blogs
+            </a>
+            
+            <h1 class="article-title">Perspective: What a Reasonable Marketing Budget Looks Like for a Small Service Business</h1>
+            
+            <div class="article-hero-img">
+                <img src="blog6.jpg" alt="What a Reasonable Marketing Budget Looks Like for a Small Service Business">
             </div>
-        </main>
+            
+            <div class="article-content">
+                <p>One of the most common questions small business owners ask is how much they should actually be spending on marketing. There's no single number that fits every business, but there is a reasonable range and a reasonable way of thinking about it. Understanding what a realistic marketing budget for small service business owners looks like can prevent both underspending, which limits growth, and overspending on things that don't bring in customers, which is exactly the kind of planning conversation SCS has with laundry business owners before recommending anything.</p>
+                
+                <h2>Why This Question Doesn't Have One Answer</h2>
+                <p>Marketing budgets vary based on business size, competition, location, and how established the business already is. A newer laundry business trying to build awareness in a competitive area needs a different approach than an established service provider simply trying to stay visible. Instead of chasing a fixed number, it helps to think in terms of percentages and priorities rather than one size fits all figures, which is how SCS approaches budget planning for each laundry business it works with.</p>
+                
+                <h2>A Practical Starting Range</h2>
+                <p>For most small service businesses, spending somewhere between five and ten percent of monthly revenue on marketing is a reasonable starting point. Newer businesses trying to build visibility from scratch often need to lean closer to the higher end of that range, while established businesses with steady repeat customers can often maintain visibility with less, a distinction SCS factors in when setting a starting budget for a new laundry client.</p>
+                <p>This isn't a strict rule, but it gives business owners a realistic frame of reference instead of guessing or copying what a much larger competitor might be spending, which is the kind of grounded guidance SCS tries to give upfront rather than pushing a bigger package than a business actually needs.</p>
+                
+                <h2>Where the Budget Should Actually Go</h2>
+                <p>A reasonable marketing budget planning approach usually spreads spending across a few key areas rather than putting everything into one channel. This typically includes a Google Business Profile and local SEO effort, which costs time more than money but delivers long term value. It includes some paid advertising, whether through Meta or Google Ads, which brings in faster, more immediate results. And it includes basic content creation, such as photos, videos, or blog posts, which supports both social media and search visibility over time, all areas SCS covers when it builds out a laundry business's marketing plan.</p>
+                <p>Splitting a budget across these areas tends to perform better than putting the entire amount into ads alone, since paid visibility disappears the moment spending stops, while SEO and content continue working in the background, which is why SCS builds campaigns around this mix rather than leaning on paid ads by themselves.</p>
+                
+                <h2>Avoiding Common Budget Mistakes</h2>
+                <p>One of the most common mistakes small service businesses make is either spending nothing on marketing and relying entirely on word of mouth, or spending inconsistently, running a large campaign for one month and then stopping entirely for the next three. Search engines and social platforms both reward consistency, so a smaller, steady monthly budget usually outperforms occasional large bursts of spending, which is why SCS encourages laundry clients to commit to a consistent monthly plan rather than one off campaigns.</p>
+                <p>Another common mistake is expecting immediate results from every channel. Paid ads can bring quick traffic, but SEO and content marketing typically take a few months to show meaningful results. A reasonable budget accounts for this difference instead of abandoning strategies too early, and this is something SCS sets expectations around from the very first conversation with a client.</p>
+                
+                <h2>Adjusting the Budget as the Business Grows</h2>
+                <p>A marketing budget for small service business owners shouldn't stay fixed forever. As revenue grows, the actual amount spent naturally increases even if the percentage stays the same. Business owners should also revisit their budget whenever they expand into a new area, launch a new service, or notice increased competition nearby, since these situations often require a temporary increase in visibility efforts, something SCS regularly flags to laundry clients as their business changes.</p>
+                <p>Tracking which channels are actually bringing in customers, rather than just spending on what feels active or trendy, helps redirect the budget toward what genuinely works over time, which is exactly the kind of tracking SCS builds into the reporting it shares with clients.</p>
+                
+                <h2>Setting Realistic Expectations</h2>
+                <p>A reasonable marketing budget doesn't guarantee overnight results, but it does build steady, compounding visibility when spent consistently and across the right mix of channels. Small service businesses that treat marketing as an ongoing investment rather than an occasional expense tend to see stronger, more predictable growth over time compared to those who only spend when business slows down, which is the mindset SCS tries to build with every laundry business it partners with.</p>
+                
+                <h2>The Bottom Line</h2>
+                <p>There's no universal number that works for every small service business, but a reasonable range, spread thoughtfully across local SEO, paid ads, and content, gives most businesses a solid foundation to build from. The goal isn't to spend as much as possible. It's to spend consistently, in the right places, and to keep adjusting based on what actually brings customers through the door, which is exactly the kind of budget planning SCS helps laundry business owners put together.</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- ===== FOOTER ===== -->
+    <!-- ===== CTA BANNER SECTION ===== -->
+    <section class="blogs-cta-section">
+        <div class="blogs-cta-container">
+            <div class="blogs-cta-box">
+                <h2>Ready to scale your brand to <em>new heights?</em></h2>
+                <p>If you want to achieve ground-breaking growth with increased sales and profitability with paid ads, then you're in the right place.</p>
+                <a href="contact.html" class="blogs-cta-btn">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <div class="cta-footer-container">
         <footer class="footer">
             <div class="container footer-grid">
 
@@ -163,7 +138,7 @@
                         <li><a href="index.html#home">Home</a></li>
                         <li><a href="index.html#services">Services</a></li>
                         <li><a href="crm.html">CRM Solutions</a></li>
-                        <li><a href="index.html#testimonials">Testimonials</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
@@ -173,7 +148,7 @@
                     <h4>Contact</h4>
                     <ul class="contact-details-list-footer">
                         <li>
-                            <div class="icon">
+                            <div class="icon" style="color: #ff525a;">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
                                     <path
@@ -257,8 +232,7 @@
         </footer>
     </div>
 
-    <script src="contact.js"></script>
-    <script src="app.js"></script>
+    <script src="app.js?v=1.2"></script>
 </body>
 
 </html>

@@ -4,16 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us – SCS Digital Marketing</title>
-    <meta name="description"
-        content="Get in touch with SCS Digital Marketing. Send us a message and let's grow your business together.">
+    <title>Company Update: SCS's Expansion Into the Laundry Sector – Blogs</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="blogs.css?v=5">
 </head>
 
 <body>
@@ -27,13 +26,13 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html#home" class="nav-link">Home</a></li>
                 <li><a href="index.html#services" class="nav-link">Services</a></li>
-                <li><a href="index.html#faqs" class="nav-link">FAQs</a></li>
-                <li><a href="blogs.html" class="nav-link">Blogs</a></li>
-                <li class="mobile-only"><a href="crm.html" class="nav-link">CRM</a></li>
-                <li class="mobile-only"><a href="contact.html" class="nav-link active">Contact Us</a></li>
+                <li><a href="#" class="nav-link">Products</a></li>
+                <li><a href="blogs.html" class="nav-link active">Blogs</a></li>
+                <li class="mobile-only"><a href="index.html" class="nav-link">Digital Marketing</a></li>
+                <li class="mobile-only"><a href="contact.html" class="nav-link">Contact Us</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="crm.html" class="nav-btn-highlight-crm" id="nav-crm-btn">CRM</a>
+                <a href="index.html" class="nav-btn-highlight" id="nav-dm">Digital Marketing</a>
                 <a href="contact.html" class="nav-btn" id="nav-cta">Contact Us</a>
             </div>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -42,91 +41,69 @@
         </nav>
     </header>
 
-    <!-- ===== CONTACT & FOOTER GROUP ===== -->
-    <div class="contact-footer-container">
-        <!-- ===== CONTACT CONTENT ===== -->
-        <main class="contact-page-wrapper">
-            <div class="contact-page-container">
-
-                <!-- Left Column: Details -->
-                <div class="contact-info-col">
-                    <h1 class="contact-page-title">Let's Grow Your<br>Business <em>Together</em></h1>
-                    <p class="contact-page-subtitle">Have a project in mind or need expert digital marketing solutions?
-                        We'd love to hear from you.</p>
-
-                    <div class="contact-details-list">
-
-                        <div class="contact-detail-card">
-                            <div class="contact-detail-icon">
-                                <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
-                                    <path
-                                        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72A2 2 0 012 1h3a2 2 0 012 1.72c.127 1.01.359 2 .69 2.95a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.13-1.13a2 2 0 012.11-.45c.96.334 1.95.567 2.95.69A2 2 0 0122 16.92z"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                                </svg>
-                            </div>
-                            <div class="contact-detail-text">
-                                <strong>Phone</strong>
-                                <span>044-42832106, +91 9789020311</span>
-                            </div>
-                        </div>
-
-                        <div class="contact-detail-card">
-                            <div class="contact-detail-icon">
-                                <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
-                                    <path
-                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                                        stroke="currentColor" stroke-width="2" />
-                                    <path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" />
-                                </svg>
-                            </div>
-                            <div class="contact-detail-text">
-                                <strong>Email</strong>
-                                <span>support@systemcaresitsolutions.com</span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Right Column: Form Box -->
-                <div class="contact-form-col">
-                    <div class="contact-form-card">
-                        <h3>Send Us a Message</h3>
-
-                        <form id="contact-form" novalidate>
-                            <div class="form-group">
-                                <label for="name">Name:</label>
-                                <input type="text" id="name" name="name" placeholder="e.g. Vikram" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="phone">Mobile Number :</label>
-                                <input type="tel" id="phone" name="phone" placeholder="e.g. +91 90784 87387" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="message">Message :</label>
-                                <textarea id="message" name="message" rows="5" placeholder="e.g. Vikram"
-                                    required></textarea>
-                            </div>
-
-                            <button type="submit" class="contact-form-submit" id="submit-btn">
-                                <span class="btn-text">Submit</span>
-                                <span class="btn-loader" style="display:none;">Sending...</span>
-                            </button>
-
-                            <div class="form-success-box" id="form-success" style="display:none;">
-                                ✅ Thank you! Your message has been sent successfully. We will get back to you soon.
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
+    <!-- ===== BLOG CONTENT SECTION ===== -->
+    <section class="article-section">
+        <div class="article-container">
+            <a href="blogs.html" class="back-to-blogs">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to Blogs
+            </a>
+            
+            <h1 class="article-title">Company Update: SCS's Expansion Into the Laundry Sector</h1>
+            
+            <div class="article-hero-img">
+                <img src="blog2.jpg" alt="SCS Expansion Into the Laundry Sector">
             </div>
-        </main>
+            
+            <div class="article-content">
+                <p>SCS is expanding its focus into the laundry sector, marking a significant step for the company as it moves deeper into an industry that has long been underserved when it comes to technology and business support. This expansion reflects a growing demand from laundry entrepreneurs across India who are looking for reliable tools to run and grow their businesses, not just equipment to wash clothes.</p>
+                
+                <h2>Why the Laundry Sector, and Why Now</h2>
+                <p>The laundry industry in India has traditionally relied on manual processes, informal record keeping, and word of mouth marketing. At the same time, more entrepreneurs are entering the space, including first time business owners, homemakers, and members of traditional laundry communities looking to formalize and scale their work.</p>
+                <p>This shift created a clear gap. Laundry businesses needed the same kind of structured support that other retail and service industries already had access to, including point of sale systems, digital marketing, and operational guidance. SCS's expansion into the laundry sector is a direct response to that gap.</p>
+                
+                <h2>What This Expansion Includes</h2>
+                <p>As part of this move, SCS is bringing its POS technology, business systems, and marketing expertise specifically tailored to the needs of laundry businesses. This includes SCS POS for laundry business operations, allowing owners to manage orders, track payments, and monitor daily business performance without relying on paper registers or guesswork.</p>
+                <p>Alongside the technology, SCS is also offering support in areas like digital marketing, branding, and customer communication, helping laundry business owners build a professional presence both online and in their local communities.</p>
+                
+                <h2>Introducing TSLM: SCS's CRM for Laundry Businesses</h2>
+                <p>A key part of this expansion is The Salavai Laundry Management (TSLM), a CRM application built by SCS specifically for laundry businesses. Where the POS system handles day to day billing and order tracking, TSLM gives owners a place to manage their customer relationships, keeping a record of repeat customers, order history, and preferences, so follow ups and reminders happen automatically instead of depending on memory or notebooks.</p>
+                <p>For laundry business owners, this means fewer missed pickups, better repeat business, and a more consistent customer experience, all managed from a single system rather than scattered across registers, phone calls, and memory. Together, SCS POS and TSLM by SCS give laundry businesses the same kind of connected, data backed operations that larger retail and service brands already rely on.</p>
+                
+                <h2>Supporting a Growing Laundry Entrepreneurship Movement</h2>
+                <p>This expansion isn't happening in isolation. It aligns closely with a broader movement toward laundry entrepreneurship in India, where individuals are being trained and equipped to start and run their own laundry businesses as a stable source of income. Many of these entrepreneurs come from backgrounds with strong ties to the traditional laundry industry, and technology adoption has often been the missing piece in helping them compete and grow.</p>
+                <p>By stepping into this space, SCS is positioning itself as more than a technology provider. It's becoming a partner for laundry businesses at every stage, from setup to daily operations to long term growth.</p>
+                
+                <h2>The Bigger Picture for Laundry Business Technology in India</h2>
+                <p>The broader laundry industry growth in India is being driven by rising urban demand, busier households, and a growing acceptance of professional laundry services over traditional in home washing. As this demand grows, laundry businesses that operate with organized systems and visible branding will have a clear advantage over those still running informally.</p>
+                <p>SCS's move into this sector comes at a time when digital solutions for laundry business owners are becoming less of a luxury and more of a basic requirement for staying competitive.</p>
+                
+                <h2>What This Means for Laundry Business Owners</h2>
+                <p>For existing and aspiring laundry entrepreneurs, this expansion means access to tools and support that were previously out of reach for many small operators. From a functional laundry POS system to guidance on marketing and customer retention, the goal is to help laundry business owners run their operations with the same level of structure and professionalism as any other established retail or service business.</p>
+                <p>As SCS continues building out this side of the business, laundry entrepreneurs across Tamil Nadu, Kerala, Karnataka, and beyond can expect ongoing support designed specifically around the realities of running a laundry business, not generic solutions borrowed from unrelated industries.</p>
+                
+                <h2>Looking Ahead</h2>
+                <p>This expansion marks the beginning of a longer term commitment to the laundry sector, not a one time initiative. As more laundry businesses adopt structured systems and modern marketing practices, the industry as a whole stands to benefit from higher visibility, better customer trust, and stronger, more sustainable growth.</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- ===== FOOTER ===== -->
+    <!-- ===== CTA BANNER SECTION ===== -->
+    <section class="blogs-cta-section">
+        <div class="blogs-cta-container">
+            <div class="blogs-cta-box">
+                <h2>Ready to scale your brand to <em>new heights?</em></h2>
+                <p>If you want to achieve ground-breaking growth with increased sales and profitability with paid ads, then you're in the right place.</p>
+                <a href="contact.html" class="blogs-cta-btn">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <div class="cta-footer-container">
         <footer class="footer">
             <div class="container footer-grid">
 
@@ -163,7 +140,7 @@
                         <li><a href="index.html#home">Home</a></li>
                         <li><a href="index.html#services">Services</a></li>
                         <li><a href="crm.html">CRM Solutions</a></li>
-                        <li><a href="index.html#testimonials">Testimonials</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
@@ -173,7 +150,7 @@
                     <h4>Contact</h4>
                     <ul class="contact-details-list-footer">
                         <li>
-                            <div class="icon">
+                            <div class="icon" style="color: #ff525a;">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
                                     <path
@@ -257,8 +234,7 @@
         </footer>
     </div>
 
-    <script src="contact.js"></script>
-    <script src="app.js"></script>
+    <script src="app.js?v=1.2"></script>
 </body>
 
 </html>

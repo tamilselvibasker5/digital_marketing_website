@@ -4,16 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us – SCS Digital Marketing</title>
-    <meta name="description"
-        content="Get in touch with SCS Digital Marketing. Send us a message and let's grow your business together.">
+    <title>Blogs – SCS Digital Marketing</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="blogs.css?v=5">
 </head>
 
 <body>
@@ -27,13 +26,13 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html#home" class="nav-link">Home</a></li>
                 <li><a href="index.html#services" class="nav-link">Services</a></li>
-                <li><a href="index.html#faqs" class="nav-link">FAQs</a></li>
-                <li><a href="blogs.html" class="nav-link">Blogs</a></li>
-                <li class="mobile-only"><a href="crm.html" class="nav-link">CRM</a></li>
-                <li class="mobile-only"><a href="contact.html" class="nav-link active">Contact Us</a></li>
+                <li><a href="#" class="nav-link">Products</a></li>
+                <li><a href="blogs.html" class="nav-link active">Blogs</a></li>
+                <li class="mobile-only"><a href="index.html" class="nav-link">Digital Marketing</a></li>
+                <li class="mobile-only"><a href="contact.html" class="nav-link">Contact Us</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="crm.html" class="nav-btn-highlight-crm" id="nav-crm-btn">CRM</a>
+                <a href="index.html" class="nav-btn-highlight" id="nav-dm">Digital Marketing</a>
                 <a href="contact.html" class="nav-btn" id="nav-cta">Contact Us</a>
             </div>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -42,91 +41,70 @@
         </nav>
     </header>
 
-    <!-- ===== CONTACT & FOOTER GROUP ===== -->
-    <div class="contact-footer-container">
-        <!-- ===== CONTACT CONTENT ===== -->
-        <main class="contact-page-wrapper">
-            <div class="contact-page-container">
-
-                <!-- Left Column: Details -->
-                <div class="contact-info-col">
-                    <h1 class="contact-page-title">Let's Grow Your<br>Business <em>Together</em></h1>
-                    <p class="contact-page-subtitle">Have a project in mind or need expert digital marketing solutions?
-                        We'd love to hear from you.</p>
-
-                    <div class="contact-details-list">
-
-                        <div class="contact-detail-card">
-                            <div class="contact-detail-icon">
-                                <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
-                                    <path
-                                        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72A2 2 0 012 1h3a2 2 0 012 1.72c.127 1.01.359 2 .69 2.95a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.13-1.13a2 2 0 012.11-.45c.96.334 1.95.567 2.95.69A2 2 0 0122 16.92z"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                                </svg>
-                            </div>
-                            <div class="contact-detail-text">
-                                <strong>Phone</strong>
-                                <span>044-42832106, +91 9789020311</span>
-                            </div>
-                        </div>
-
-                        <div class="contact-detail-card">
-                            <div class="contact-detail-icon">
-                                <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
-                                    <path
-                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                                        stroke="currentColor" stroke-width="2" />
-                                    <path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" />
-                                </svg>
-                            </div>
-                            <div class="contact-detail-text">
-                                <strong>Email</strong>
-                                <span>support@systemcaresitsolutions.com</span>
-                            </div>
-                        </div>
-
-                    </div>
+    <!-- ===== BLOGS GRID SECTION ===== -->
+    <section class="blogs-section">
+        <div class="blogs-header">
+            <h1 class="blogs-title">Blogs</h1>
+        </div>
+        <div class="blogs-grid">
+            <!-- Card 1 -->
+            <a href="blog-post-1.html" class="blog-card">
+                <div class="blog-card-img">
+                    <img src="blog1.jpg" alt="Digital Marketing for Laundry & Local Service Businesses in India">
                 </div>
-
-                <!-- Right Column: Form Box -->
-                <div class="contact-form-col">
-                    <div class="contact-form-card">
-                        <h3>Send Us a Message</h3>
-
-                        <form id="contact-form" novalidate>
-                            <div class="form-group">
-                                <label for="name">Name:</label>
-                                <input type="text" id="name" name="name" placeholder="e.g. Vikram" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="phone">Mobile Number :</label>
-                                <input type="tel" id="phone" name="phone" placeholder="e.g. +91 90784 87387" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="message">Message :</label>
-                                <textarea id="message" name="message" rows="5" placeholder="e.g. Vikram"
-                                    required></textarea>
-                            </div>
-
-                            <button type="submit" class="contact-form-submit" id="submit-btn">
-                                <span class="btn-text">Submit</span>
-                                <span class="btn-loader" style="display:none;">Sending...</span>
-                            </button>
-
-                            <div class="form-success-box" id="form-success" style="display:none;">
-                                ✅ Thank you! Your message has been sent successfully. We will get back to you soon.
-                            </div>
-                        </form>
-                    </div>
+                <h3 class="blog-card-title">Digital Marketing for Laundry &amp; Local Service Businesses in India: What's Changing in 2026</h3>
+            </a>
+            <!-- Card 2 -->
+            <a href="blog-post-2.html" class="blog-card">
+                <div class="blog-card-img">
+                    <img src="blog2.jpg" alt="SCS Expansion Into the Laundry Sector">
                 </div>
+                <h3 class="blog-card-title">Company Update: SCS's Expansion Into the Laundry Sector</h3>
+            </a>
+            <!-- Card 3 -->
+            <a href="blog-post-3.html" class="blog-card">
+                <div class="blog-card-img">
+                    <img src="blog3.jpg" alt="How Digital Marketing Improves Local Search Visibility">
+                </div>
+                <h3 class="blog-card-title">How Digital Marketing Improves a Client's Local Search Visibility</h3>
+            </a>
+            <!-- Card 4 -->
+            <a href="blog-post-4.html" class="blog-card">
+                <div class="blog-card-img">
+                    <img src="blog4.jpg" alt="Laundry and Dry Cleaning Businesses Moving Online India">
+                </div>
+                <h3 class="blog-card-title">Why Laundry and Dry Cleaning Businesses in India Are Moving Online Faster Than Expected</h3>
+            </a>
+            <!-- Card 5 -->
+            <a href="blog-post-5.html" class="blog-card">
+                <div class="blog-card-img">
+                    <img src="blog5.jpg" alt="CRM Analytics and Real Time Customer Updates">
+                </div>
+                <h3 class="blog-card-title">Features of CRM: Analytics and Real Time Customer Updates</h3>
+            </a>
+            <!-- Card 6 -->
+            <a href="blog-post-6.html" class="blog-card">
+                <div class="blog-card-img">
+                    <img src="blog6.jpg" alt="Marketing Budget for Small Service Business">
+                </div>
+                <h3 class="blog-card-title">Perspective: What a Reasonable Marketing Budget Looks Like for a Small Service Business</h3>
+            </a>
+        </div>
+    </section>
 
+    <!-- ===== CTA BANNER SECTION ===== -->
+    <section class="blogs-cta-section">
+        <div class="blogs-cta-container">
+            <div class="blogs-cta-box">
+                <h2>Ready to scale your brand to <em>new heights?</em></h2>
+                <p>If you want to achieve ground-breaking growth with increased sales and profitability with paid ads, then you're in the right place.</p>
+                <a href="contact.html" class="blogs-cta-btn">Contact Us</a>
             </div>
-        </main>
+        </div>
+    </section>
 
-        <!-- ===== FOOTER ===== -->
+    <!-- ===== FOOTER ===== -->
+    <div class="cta-footer-container">
         <footer class="footer">
             <div class="container footer-grid">
 
@@ -163,7 +141,7 @@
                         <li><a href="index.html#home">Home</a></li>
                         <li><a href="index.html#services">Services</a></li>
                         <li><a href="crm.html">CRM Solutions</a></li>
-                        <li><a href="index.html#testimonials">Testimonials</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
@@ -173,7 +151,7 @@
                     <h4>Contact</h4>
                     <ul class="contact-details-list-footer">
                         <li>
-                            <div class="icon">
+                            <div class="icon" style="color: #ff525a;">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
                                     <path
@@ -257,8 +235,7 @@
         </footer>
     </div>
 
-    <script src="contact.js"></script>
-    <script src="app.js"></script>
+    <script src="app.js?v=1.2"></script>
 </body>
 
 </html>
