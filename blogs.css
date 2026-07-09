@@ -17,6 +17,11 @@
 .blogs-header {
   text-align: center;
   margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
 .blogs-title {
@@ -25,6 +30,32 @@
   font-weight: 800;
   color: #1e293b;
   letter-spacing: -0.02em;
+}
+
+.blogs-translate-btn {
+  appearance: none;
+  border: 1px solid rgba(255, 43, 56, 0.25);
+  background: linear-gradient(180deg, #fff, #fff7f7);
+  color: var(--primary-pink);
+  font-family: var(--font-main);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 43, 56, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.blogs-translate-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 43, 56, 0.4);
+  box-shadow: 0 10px 24px rgba(255, 43, 56, 0.12);
+}
+
+.blogs-translate-btn:focus-visible {
+  outline: 2px solid rgba(255, 43, 56, 0.45);
+  outline-offset: 2px;
 }
 
 /* 3-Column Grid */
@@ -161,6 +192,10 @@
 }
 
 @media (max-width: 600px) {
+  .blogs-header {
+    gap: 10px;
+  }
+
   .blogs-grid {
     grid-template-columns: 1fr;
   }
@@ -200,6 +235,33 @@
 
 .back-to-blogs:hover {
   color: var(--primary-hover);
+}
+
+.article-language-toggle {
+  appearance: none;
+  border: 1px solid rgba(255, 43, 56, 0.25);
+  background: linear-gradient(180deg, #fff, #fff7f7);
+  color: var(--primary-pink);
+  font-family: var(--font-main);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 43, 56, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  margin-left: 12px;
+}
+
+.article-language-toggle:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 43, 56, 0.4);
+  box-shadow: 0 10px 24px rgba(255, 43, 56, 0.12);
+}
+
+.article-language-toggle:focus-visible {
+  outline: 2px solid rgba(255, 43, 56, 0.45);
+  outline-offset: 2px;
 }
 
 .article-title {
@@ -271,6 +333,11 @@
 @media (max-width: 600px) {
   .article-hero-img {
     height: 200px;
+  }
+
+  .article-language-toggle {
+    margin-left: 0;
+    margin-top: 10px;
   }
 }
 

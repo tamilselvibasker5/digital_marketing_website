@@ -13,6 +13,41 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="blogs.css?v=5">
+    <style>
+        .article-language-toggle {
+            appearance: none;
+            border: 1px solid rgba(255, 43, 56, 0.25);
+            background: linear-gradient(180deg, #fff, #fff7f7);
+            color: #ff2b38;
+            font-family: inherit;
+            font-size: 0.88rem;
+            font-weight: 700;
+            padding: 10px 16px;
+            border-radius: 999px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(255, 43, 56, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            margin-left: 12px;
+        }
+
+        .article-language-toggle:hover {
+            transform: translateY(-1px);
+            border-color: rgba(255, 43, 56, 0.4);
+            box-shadow: 0 10px 24px rgba(255, 43, 56, 0.12);
+        }
+
+        .article-language-toggle:focus-visible {
+            outline: 2px solid rgba(255, 43, 56, 0.45);
+            outline-offset: 2px;
+        }
+
+        @media (max-width: 600px) {
+            .article-language-toggle {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -51,6 +86,7 @@
                 </svg>
                 Back to Blogs
             </a>
+            <button type="button" class="article-language-toggle" id="article-language-toggle" aria-pressed="true">English</button>
             
             <h1 class="article-title">Digital Marketing for Laundry & Local Service Businesses in India: What's Changing in 2026</h1>
             
@@ -240,6 +276,114 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const articleContainer = document.querySelector('.article-container');
+            const titleEl = document.querySelector('.article-title');
+            const contentEl = document.querySelector('.article-content');
+            const ctaBox = document.querySelector('.blogs-cta-box');
+            const ctaTitle = ctaBox && ctaBox.querySelector('h2');
+            const ctaText = ctaBox && ctaBox.querySelector('p');
+            const ctaButton = ctaBox && ctaBox.querySelector('.blogs-cta-btn');
+            const backLink = document.querySelector('.back-to-blogs');
+            const toggleButton = document.getElementById('article-language-toggle');
+
+            if (!articleContainer || !titleEl || !contentEl || !ctaTitle || !ctaText || !ctaButton || !backLink || !toggleButton) return;
+
+            const backIcon = backLink.querySelector('svg') ? backLink.querySelector('svg').outerHTML : '';
+            const englishState = {
+                title: titleEl.textContent,
+                content: contentEl.innerHTML,
+                ctaTitle: ctaTitle.innerHTML,
+                ctaText: ctaText.textContent,
+                ctaButton: ctaButton.textContent,
+                backText: 'Back to Blogs',
+                documentTitle: document.title,
+            };
+
+            const tamilState = {
+                title: 'இந்தியாவில் துணி துவைப்பு மற்றும் உள்ளூர் சேவை வணிகங்களுக்கான டிஜிட்டல் மார்க்கெட்டிங்: 2026-இல் என்ன மாற்றங்கள் வருகிறது?',
+                backText: 'வலைப்பதிவுகளுக்கு திரும்ப',
+                ctaTitle: 'உங்கள் பிராண்டை <em>புதிய உயரங்களுக்கு</em> கொண்டு செல்ல தயாரா?',
+                ctaText: 'கட்டண விளம்பரங்களின் மூலம் விற்பனையும் லாபமும் அதிகரித்து அதிரடியான வளர்ச்சியை அடைய விரும்பினால், நீங்கள் சரியான இடத்தில் இருக்கிறீர்கள்.',
+                ctaButton: 'எங்களைத் தொடர்புகொள்ளுங்கள்',
+                documentTitle: 'இந்தியாவில் துணி துவைப்பு மற்றும் உள்ளூர் சேவை வணிகங்களுக்கான டிஜிட்டல் மார்க்கெட்டிங்: 2026-இல் என்ன மாற்றங்கள் வருகிறது – Blogs',
+                content: `
+                    <p>இந்தியாவின் உள்ளூர் சேவைத் துறை வேகமாக வளர்ந்து வருகிறது. துணி துவைப்பு கடைகள், சலூன்கள், பழுது சரிசெய்யும் கடைகள், மற்றும் சுத்தம் செய்வதற்கான சேவைகள் ஒவ்வொரு பகுதியில் திறக்கப்படுகின்றன. ஆனால் இவற்றில் பல இன்னும் ஆன்லைனில் தெரியாமல் இருக்கின்றன. நீங்கள் ஒரு துணி துவைப்பு வணிகத்தை நடத்தினாலும் அல்லது எந்தவொரு உள்ளூர் சேவையையும் வழங்கினாலும், இன்றைய இந்தியாவில் உள்ளூர் சேவை வணிகங்களுக்கு டிஜிட்டல் மார்க்கெட்டிங் எப்படி வேலை செய்கிறது என்பதைப் புரிந்துகொள்வது நிலையான வளர்ச்சிக்கும் பின்னடைவைத் தவிர்ப்பதற்கும் இடையிலான வேறுபாடாக இருக்கும்.</p>
+
+                    <h2>இந்தியாவில் பல உள்ளூர் சேவை வணிகங்கள் இன்னும் ஏன் ஆன்லைனில் தெரியாமல் இருக்கின்றன</h2>
+                    <p>தமிழ்நாடு, கேரளா, கர்நாடகா போன்ற எந்த நகரத்திற்கும் சென்றாலும், வாய் வழிப் பரிந்துரைகள் மற்றும் நேரடி வருகையை மட்டும் நம்பும் துணி துவைப்பு கடைகள், தையல் கடைகள், மற்றும் சேவை வழங்குநர்களைக் காணலாம். அது தவறு அல்ல, ஆனால் அது முழுமையானது அல்ல. இன்று இந்தியாவில் உள்ளூர் சேவை தேடல்களின் பெரும்பகுதி மொபைல் போன்களில் நடக்கிறது; வாடிக்கையாளர்கள் கடைக்குள் வருவதற்கு முன்பே “laundry near me” அல்லது “dry cleaning service in [city]” போன்றவற்றைத் தேடுகின்றனர்.</p>
+                    <p>உங்கள் வணிகம் அந்த தேடல்களில் தோன்றவில்லை என்றால், ஏற்கனவே உள்ளூர் SEO-வில் முதலீடு செய்கிற போட்டியாளர்களிடம் நீங்கள் வாடிக்கையாளர்களை இழக்கிறீர்கள்.</p>
+
+                    <h2>Google Business Profile: துணி துவைப்பு வணிகங்களுக்கான புதிய கடை முகப்பு</h2>
+                    <p>எந்த துணி துவைப்பு வணிகத்தின் மார்க்கெட்டிங் திட்டத்திலும், நன்றாக அமைக்கப்பட்ட Google Business Profile ஒரு வலைத்தளத்தைவிட கூட அதிக முக்கியத்துவம் பெறலாம். அது Google Maps-லிலும் உள்ளூர் தேடல் முடிவுகளிலும் நேரடியாக தோன்றுகிறது, மதிப்புரைகள், நேரங்கள், புகைப்படங்கள் ஆகியவற்றைக் காட்டுகிறது, மற்றும் வாடிக்கையாளர்கள் நேரடியாக உங்களுக்குச் செய்தி அனுப்பவும் உதவுகிறது. இது இன்று கிடைக்கக்கூடிய மிக உயர்ந்த தாக்கம் கொண்ட, குறைந்த செலவு உள்ளூர் SEO கருவிகளில் ஒன்றாகும்.</p>
+                    <p>இங்கே சில எளிய முன்னேற்றங்கள்:</p>
+                    <ul>
+                        <li>உங்கள் கடை, இயந்திரங்கள், குழு ஆகியவற்றின் உண்மையான புகைப்படங்களைப் பதிவேற்றவும், “laundry shop Chennai” போன்ற விளக்கமான கோப்பு பெயர்கள் மற்றும் alt text-களையும் சேர்க்கவும்.</li>
+                        <li>வாடிக்கையாளர் மதிப்புரைகளை தொடர்ந்து சேகரித்து, எல்லா மதிப்புரைகளுக்கும் பதிலளிக்கவும்; மதிப்புரைகள் முக்கிய உள்ளூர் தரவரிசை காரணிகளில் ஒன்றாகும்.</li>
+                        <li>உங்கள் வேலை நேரம், சேவை பகுதி, தொடர்பு விவரங்கள் அனைத்தும் எல்லா தளங்களிலும் சரியாகவும் ஒரே மாதிரியாகவும் இருப்பதை உறுதி செய்யவும்.</li>
+                        <li>“laundry service near me” அல்லது “same day dry cleaning” போன்ற keywords-களைப் பயன்படுத்தி வழக்கமான புதுப்பிப்புகளைப் பதிவிடவும்.</li>
+                    </ul>
+
+                    <h2>துணி துவைப்பு சேவைகளுக்கான சமூக ஊடக மார்க்கெட்டிங்: நம்பிக்கை, கடுமையான விற்பனை அல்ல</h2>
+                    <p>Instagram மற்றும் WhatsApp இப்போது துணி துவைப்பு சேவைகள் மற்றும் பிற உள்ளூர் வணிகங்களுக்கு முதன்மை சமூக ஊடக சேனல்களாக மாறிவிட்டன. ஆனால் அவை கடுமையான விற்பனைக்காக அல்ல; நம்பிக்கையை உருவாக்குவதற்காக. உங்கள் துணி துவைப்பு செயல்முறையை காட்டும் சிறிய reels, stain removal முன்/பின் புகைப்படங்கள், அல்லது பணியில் இருக்கும் உங்கள் குழுவின் சுருக்கமான காட்சி ஆகியவை polished ஆன sales ads-ஐவிட சிறப்பாக செயல்படுகின்றன. தங்கள் ஆடைகள் அல்லது வீட்டை ஒப்படைக்கும் நபர்களை வாடிக்கையாளர்கள் பார்க்க விரும்புகிறார்கள்.</p>
+                    <p>WhatsApp marketing உள்ளூர் வணிகங்களுக்கு முக்கியமானதாக மாறியுள்ளது; order confirmation, pickup/delivery updates, repeat bookings ஆகியவற்றுக்கு இது உதவுகிறது. இது குறிப்பாக துணி துவைப்பு துறையில் முக்கியம், ஏனெனில் வாடிக்கையாளர்கள் தொலைபேசி அழைப்புகளை விட விரைவான, தனிப்பட்ட தொடர்பையே விரும்புகிறார்கள்.</p>
+
+                    <h2>உள்ளூர் SEO இன்னும் குறைவாகவே பயன்படுத்தப்படுகிறது, அதுவே ஒரு வாய்ப்பு</h2>
+                    <p>இந்தியாவில் சேவை வணிகங்களுக்கான ஆன்லைன் மார்க்கெட்டிங்கில் முதலீடு செய்யும் பலரும் அடிப்படை SEO-வில் பெரிதாக முதலீடு செய்யவில்லை. அதனால் அதைச் செய்பவர்கள் விரைவாகத் தெரிகிறார்கள். “how to remove oil stains from clothes”, “best laundry service in [city]”, “affordable dry cleaning near me” போன்ற தேடல் சொற்களை இலக்காகக் கொண்ட சில blog posts கூட மாதக்கணக்கில் இலவச organic traffic-ஐ கொண்டு வர முடியும், அது paid ads-ஐ தொடர்ந்து செலுத்துவதைக் காட்டிலும் மிகக் குறைந்த செலவில் இருக்கும்.</p>
+                    <p>நகரப் பெயர்கள், பகுதி பெயர்கள், சேவை பெயர்கள் போன்றவற்றை உள்ளடக்கிய keyword-rich content ஒரு சிறிய துணி துவைப்பு வணிகம் உள்ளூர் தரவரிசையில் உயர்வதற்கான மிகவும் வேகமான வழிகளில் ஒன்றாகும்.</p>
+
+                    <h2>Paid Ads: புத்திசாலியான targeting, பெரிய பட்ஜெட்டுகள் மட்டும் அல்ல</h2>
+                    <p>Meta மற்றும் Google Ads இப்போது AI-ஆல் இயக்கப்படும் delivery systems-ல் இயங்குகின்றன. அவை பொதுவான ad copy-ஐ விட creative variety மற்றும் உண்மையான engagement-ஐ அதிகம் மதிக்கின்றன. உள்ளூர் வணிகங்களுக்கு, neighborhood அளவில் hyperlocal targeting பெரும்பாலும் முழு நகரத்தைக் குறிவைக்கும் campaigns-ஐவிட சிறப்பாக செயல்படுகிறது. Short-form video static image ads-ஐவிட மேலிடத்தைப் பெறுகிறது. மேலும் சிறிய, தொடர்ச்சியான தினசரி budgets பெரும்பாலும் ஒரு முறை செலவிடும் பெரிய தொகைகளைக் காட்டிலும் சிறப்பாக செயல்படுகின்றன.</p>
+
+                    <h2>இதனை அடைய உங்களுக்கு யார் உதவலாம்</h2>
+                    <p>என்ன செய்ய வேண்டும் என்பதை அறிதல் ஒரு விஷயம். ஆனால் Google Business Profile-ஐ அமைத்து பராமரிப்பது, Instagram மற்றும் WhatsApp-இல் தொடர்ந்து பதிவிடுவது, மாதந்தோறும் SEO content எழுதுவது, மற்றும் ad campaigns-ஐ இயக்குவது—இவை அனைத்தும் துணி துவைப்பு வணிகத்தையே நடத்திக்கொண்டிருக்கும்போது முழு நேர வேலைபோல் இருக்கும்.</p>
+                    <p>இதற்கான இடத்தில் System Cares IT Solutions (SCS) வருகிறது. SCS தமிழ்நாடு, கேரளா, கர்நாடகா முழுவதும் உள்ள துணி துவைப்பு மற்றும் உள்ளூர் சேவை வணிகங்களுடன் சேர்ந்து Google Business Profile setup மற்றும் optimization, social media மற்றும் WhatsApp marketing, SEO-focused blog content, மற்றும் targeted Meta மற்றும் Google ad campaigns ஆகியவற்றை end-to-end முறையில் நிர்வகிக்கிறது. வணிக உரிமையாளர் ஒவ்வொரு channel-ஐயும் கற்றுக்கொண்டு இயக்க வேண்டியதில்லை; SCS digital presence-ஐ உருவாக்கி இயக்குகிறது, அதனால் உரிமையாளர் கடையை நடத்துவதில் கவனம் செலுத்த முடியும்.</p>
+                    <p>ஒரு துணி துவைப்பு வணிக உரிமையாளர் எங்கே தொடங்குவது என்று முடிவு செய்யும்போது, அந்த நேரடி ஆதரவே காகிதத்தில் இருக்கும் ஒரு நல்ல திட்டத்துக்கும் உண்மையில் search results-ல் தோன்றி வாடிக்கையாளர்களை ஈர்க்கும் ஒரு திட்டத்துக்கும் இடையிலான வித்தியாசமாகும்.</p>
+
+                    <h2>உங்கள் துணி துவைப்பு அல்லது உள்ளூர் சேவை வணிகத்திற்கு இதன் அர்த்தம்</h2>
+                    <p>இந்தியாவில் உள்ளூர் சேவை வணிகங்களில் digital marketing-ல் முதலீடு செய்யும் நிறுவனங்களுக்கும் செய்யாத நிறுவனங்களுக்கும் இடையிலான இடைவெளி வேகமாக பெரிதாகிறது. நல்ல செய்தி என்னவென்றால், போட்டியிட பெரிய பட்ஜெட் தேவையில்லை. முழுமையாக optimize செய்யப்பட்ட Google Business Profile, செயலில் இருக்கும் WhatsApp தொடர்பு, சில உண்மையான social videos, மற்றும் சில SEO optimized blog posts ஆகியவை ஒரு சிறிய துணி துவைப்பு அல்லது சேவை வணிகத்தை அதன் பகுதியில் உள்ள பெரும்பாலான போட்டியாளர்களை விட முன்னிலையில் கொண்டு செல்ல முடியும்.</p>
+                    <p>2026-இல் வெல்லப்போகும் வணிகங்கள் மிகப் பெரிய ad budgets வைத்தவர்களாக இருக்கமாட்டார்கள். தேடலில் தொடர்ந்து தோன்றுபவர்கள், சமூக ஊடகத்தில் நம்பிக்கையைத் தெளிவாக உருவாக்குபவர்கள், மற்றும் வாடிக்கையாளர்கள் எளிதில் கண்டுபிடித்து தொடர்பு கொள்ளும் வகையில் செயல்படுபவர்கள்தான் வெல்வார்கள்.</p>
+                `
+            };
+
+            const applyLanguage = (language) => {
+                const isTamil = language === 'ta';
+
+                if (isTamil) {
+                    document.documentElement.lang = 'ta';
+                    document.title = tamilState.documentTitle;
+                    titleEl.textContent = tamilState.title;
+                    contentEl.innerHTML = tamilState.content;
+                    ctaTitle.innerHTML = tamilState.ctaTitle;
+                    ctaText.textContent = tamilState.ctaText;
+                    ctaButton.textContent = tamilState.ctaButton;
+                    backLink.innerHTML = `${backIcon}<span>${tamilState.backText}</span>`;
+                    toggleButton.textContent = 'English';
+                    toggleButton.setAttribute('aria-pressed', 'true');
+                } else {
+                    document.documentElement.lang = 'en';
+                    document.title = englishState.documentTitle;
+                    titleEl.textContent = englishState.title;
+                    contentEl.innerHTML = englishState.content;
+                    ctaTitle.innerHTML = englishState.ctaTitle;
+                    ctaText.textContent = englishState.ctaText;
+                    ctaButton.textContent = englishState.ctaButton;
+                    backLink.innerHTML = `${backIcon}<span>${englishState.backText}</span>`;
+                    toggleButton.textContent = 'தமிழ்';
+                    toggleButton.setAttribute('aria-pressed', 'false');
+                }
+            };
+
+            applyLanguage('ta');
+
+            toggleButton.addEventListener('click', () => {
+                const isTamil = toggleButton.getAttribute('aria-pressed') === 'true';
+                applyLanguage(isTamil ? 'en' : 'ta');
+            });
+        });
+    </script>
 
     <script src="app.js?v=1.2"></script>
 </body>
