@@ -270,6 +270,28 @@
         </div>
     </section>
 
+    <!-- ===== CONTACT FORM ===== -->
+    <section class="contact-form-section" id="contact-form">
+        <div class="container">
+                    <form data-emailjs-form>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="phone">Mobile Number:</label>
+  <input type="tel" id="phone" name="phone" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="message">Custom Requirements:</label>
+  <textarea id="message" name="message" required></textarea>
+
+  <button type="submit">Submit Request</button>
+    <div data-form-status style="display:none;margin-top:16px;padding:12px 14px;border-radius:12px;background:rgba(34,197,94,0.1);color:#166534;font-weight:600;"></div>
+</form>
+        </div>
+    </section>
+
     <!-- ===== CTA CARD & FOOTER GROUP ===== -->
     <div class="cta-footer-container">
         <!-- ===== CTA CARD BANNER ===== -->
@@ -418,6 +440,8 @@
 
     <script src="testimonials.js"></script>
     <script src="app.js?v=1.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="emailjs-form.js"></script>
 </body>
 
 </html>
