@@ -262,9 +262,17 @@
         </footer>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="emailjs-form.js"></script>
-    <script src="app.js"></script>
+        <script>
+            // EmailJS config (public values only). Private key must NOT be placed in client-side code.
+            window.EMAILJS_CONFIG = {
+                publicKey: 'QwdONcu0_vdatEAJm',
+                serviceId: 'service_r2q6ke3',
+                templateId: 'template_k3y0z4k'
+            };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script src="emailjs-form.js"></script>
+        <script src="app.js"></script>
 </body>
 
 </html>

@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (!form || !submitBtn || !formSuccess) return;
 
+  // If EmailJS is handling this form (marked with data-emailjs-form), skip the local simulated submit.
+  if (form.dataset.emailjsForm !== undefined) return;
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -29,6 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Simulate form submission API call
     setTimeout(() => {
+      // For debugging: collect form values (including email)
+      const formData = {
+        name: form.name?.value || '',
+        email: form.email?.value || '',
+        phone: form.phone?.value || '',
+        message: form.message?.value || ''
+      };
+      console.log('Simulated CRM form submission payload:', formData);
       // Hide submit button and form groups, show success box
       form.querySelectorAll('.form-group').forEach(group => {
         group.style.opacity = '0.3';

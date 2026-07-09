@@ -7,10 +7,21 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  emailjs.init({ publicKey: 'QwdONcu0_vdatEAJm' });
+  // Allow runtime override via a global `window.EMAILJS_CONFIG` object.
+  // Example (put this before the script tag in your HTML):
+  // <script>window.EMAILJS_CONFIG = { publicKey:'YOUR_PUBLIC_KEY', serviceId:'YOUR_SERVICE_ID', templateId:'YOUR_TEMPLATE_ID' };</script>
+  const defaultConfig = {
+    publicKey: 'QwdONcu0_vdatEAJm',
+    serviceId: 'service_r2q6ke3',
+    templateId: 'template_k3y0z4k'
+  };
 
-  const serviceId = 'service_r2q6ke3';
-  const templateId = 'template_k3y0z4k';
+  const cfg = Object.assign({}, defaultConfig, window.EMAILJS_CONFIG || {});
+
+  emailjs.init(cfg.publicKey);
+
+  const serviceId = cfg.serviceId;
+  const templateId = cfg.templateId;
 
   document.querySelectorAll('[data-emailjs-form]').forEach((form) => {
     const submitButton = form.querySelector('[type="submit"]');
@@ -84,13 +95,19 @@ document.addEventListener('DOMContentLoaded', () => {
         booking_slot: getValue(['[name="booking_slot"]']),
         otp_method: getValue(['[name="otp_method"]']),
         business_goals: getValue(['[name="business_goals"]', '[name="message"]', '#message']),
+        // Explicit destination and reply-to to ensure delivery to support inbox
+        to_email: 'support@systemcaresitsolutions.com',
+        reply_to: getValue(['[name="from_email"]', '[name="email"]', '#email'])
       };
 
       try {
-        await emailjs.send(serviceId, templateId, templateParams);
+        console.log('EmailJS: sending', { serviceId, templateId, templateParams });
+        const result = await emailjs.send(serviceId, templateId, templateParams);
+        console.log('EmailJS: send result', result);
         form.reset();
         showStatus('Thanks! Your message has been sent successfully.');
       } catch (error) {
+        console.error('EmailJS: send error', error);
         showStatus('Something went wrong while sending your message. Please try again.', true);
       } finally {
         setLoadingState(false);
