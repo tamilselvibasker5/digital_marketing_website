@@ -84,20 +84,28 @@ document.addEventListener('DOMContentLoaded', () => {
         return '';
       };
 
+      const getValueOr = (selectors, fallback) => {
+        const value = getValue(selectors);
+        return value || fallback;
+      };
+
+      const baseBusinessGoals = getValue(['[name="business_goals"]', '[name="message"]', '#message']);
+      const inquiryLabel = form.id === 'crm-contact-form' ? 'CRM Consultation' : 'Digital Marketing Enquiry';
+
       const templateParams = {
-        from_name: getValue(['[name="from_name"]', '[name="name"]', '#name']),
-        from_email: getValue(['[name="from_email"]', '[name="email"]', '#email']),
-        phone: getValue(['[name="phone"]', '#phone']),
-        company_name: getValue(['[name="company_name"]']),
-        city: getValue(['[name="city"]']),
-        state: getValue(['[name="state"]']),
-        package_name: getValue(['[name="package_name"]']),
-        booking_slot: getValue(['[name="booking_slot"]']),
-        otp_method: getValue(['[name="otp_method"]']),
-        business_goals: getValue(['[name="business_goals"]', '[name="message"]', '#message']),
+        from_name: getValueOr(['[name="from_name"]', '[name="name"]', '#name'], 'Not provided'),
+        from_email: getValueOr(['[name="from_email"]', '[name="email"]', '#email'], 'Not provided'),
+        phone: getValueOr(['[name="phone"]', '#phone'], 'Not provided'),
+        company_name: getValueOr(['[name="company_name"]'], 'Not provided'),
+        city: getValueOr(['[name="city"]'], 'Not provided'),
+        state: getValueOr(['[name="state"]'], 'Not provided'),
+        package_name: getValueOr(['[name="package_name"]'], inquiryLabel),
+        booking_slot: getValueOr(['[name="booking_slot"]'], 'Not specified'),
+        otp_method: getValueOr(['[name="otp_method"]'], 'Not specified'),
+        business_goals: baseBusinessGoals || 'Not provided',
         // Explicit destination and reply-to to ensure delivery to support inbox
         to_email: 'support@systemcaresitsolutions.com',
-        reply_to: getValue(['[name="from_email"]', '[name="email"]', '#email'])
+        reply_to: getValueOr(['[name="from_email"]', '[name="email"]', '#email'], 'support@systemcaresitsolutions.com')
       };
 
       try {
