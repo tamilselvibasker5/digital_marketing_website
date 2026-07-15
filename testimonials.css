@@ -68,7 +68,7 @@
 /* Testimonial card */
 .t-card {
     position: absolute;
-    width: 460px;
+    width: min(460px, 82vw);
     height: 280px;
     border-radius: 24px;
     padding: 30px;
@@ -258,7 +258,7 @@
 
 @media (max-width: 768px) {
     .t-carousel-wrapper {
-        height: 380px;
+        height: 400px;
     }
     
     /* Hide side cards on mobile, keep only active card */
@@ -287,6 +287,10 @@
 @media (max-width: 480px) {
     .t-heading {
         margin-bottom: 40px;
+    }
+
+    .t-carousel-wrapper {
+        height: 360px;
     }
     
     .t-card.active {

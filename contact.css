@@ -118,6 +118,7 @@
     font-size: 0.98rem;
     font-weight: 600;
     color: #111111;
+    word-break: break-word;
 }
 
 /* Right Column: Form Box Card */
